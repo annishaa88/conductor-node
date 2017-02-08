@@ -1,0 +1,19 @@
+<div class="panel-group padded-panel" role="tablist">
+    <div class="panel panel-default">
+        {{#each songGroups}}
+            <div class="panel-heading" role="tab" id="songList"><h4 class="panel-title"><a
+                    href="#{{name}}" class="collapse" role="button" data-toggle="collapse" aria-expanded="true"
+                    aria-controls="{{name}}"> {{name}}</a></h4></div>
+
+            <div class="panel-collapse collapse in" role="tabpanel" id="{{name}}"
+                 aria-labelledby="songList" aria-expanded="true">
+
+                <div class="list-group songs">
+                    {{#each songs}}
+                        <a href="#" class="list-group-item song" id={{id}}>{{name}} - {{composer}}</a>
+                    {{/each}}
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

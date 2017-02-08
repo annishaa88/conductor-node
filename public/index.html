@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Conductor App</title>
+    <meta name="description"
+          content="Conductor">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/dist/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/dist/waveform-playlist.var.js"></script>
+    <script type="text/javascript" src="js/songModel.js"></script>
+    <script type="text/javascript" src="js/songListModel.js"></script>
+    <script type="text/javascript" src="js/songPointsModel.js"></script>
+    <script type="text/javascript" src="js/songPlaylist.js"></script>
+    <script type="text/javascript" src="js/emitter.js"></script>
+    <script type="text/javascript" src="js/test/song.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+    <script src="js/templatesCompiled.js"></script>
+    <script src="js/orchestra-map.js"></script>
+
+    <script>
+        var songPlaylist;
+        var songPointsModel;
+        var songListModel;
+        var songAlertModel;
+        $(document).ready(function () {
+            songPlaylist = new SongPlaylist();
+            songAlertModel = new SongAlertModel(true);
+
+            songPointsModel = new SongPointsModel();
+            songListModel = new SongListModel(songListJson);
+
+        })
+
+    </script>
+
+</head>
+
+
+<body>
+
+<div class="padded-panel">
+
+    <!-- Nav tabs -->
+    <ul class=" nav nav-pills" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                  data-toggle="tab">Home</a>
+        </li>
+        <li role="presentation"><a href="#songTab" aria-controls="songTab" role="tab" data-toggle="tab">Song</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home"></div>
+        <div role="tabpanel" class="tab-pane" id="songTab">
+            <div class="padded-panel">
+                <div class="well well-sm "><h4 class="heading panel-title"></h4></div>
+                <div class="wrapper">
+                </div>
+                <div class="debug-alerts">
+                    <div class="alert alert-info" role="alert"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+
+</html>
