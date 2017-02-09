@@ -6,9 +6,11 @@ function SongListModel(data) {
         $("#home").append(templateScript);
         $('.collapse').collapse('show');
 
+        var selectedSong = null;
         $("#home .song").click(function () {
             var id = $(this).attr("id");
             console.log(id + " song was chosen");
+            selectedSong = songJson[id];
 
             $('[href=#songTab]').tab('show');
         });
@@ -17,9 +19,13 @@ function SongListModel(data) {
             e.target // newly activated tab
             e.relatedTarget // previous active tab
 
-            songPlaylist.init();
-            songPlaylist.load(songJson);
-            songAlertModel.init();
+            if (selectedSong) {
+                songPlaylist.init();
+                songPlaylist.load(selectedSong);
+                songAlertModel.init();
+            } else {
+                alert("song is not found!!!");
+            }
         });
 
     }

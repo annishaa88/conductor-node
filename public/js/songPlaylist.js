@@ -10,7 +10,6 @@ function SongPlaylist() {
         var templateScript = Handlebars.templates["playlist.hbs"](this.data);
         $("#songTab .wrapper").empty().append(templateScript);
 
-        imageMapInit();
         songPointsModel.init();
 
         this.playlist = WaveformPlaylist.init({
@@ -37,7 +36,7 @@ function SongPlaylist() {
         this.songModel = new SongModel(data);
 
         this.playlist.load(this.songModel.getTracks()).then(function () {
-
+            imageMapInit();
         });
     }
 }
