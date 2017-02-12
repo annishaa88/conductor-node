@@ -118,6 +118,10 @@ function drawStopStartCircle(instrument, isStart, callback) {
 
     var instrumentArea = $("map area." + instrument);
     var coordStr = instrumentArea.attr('coords');
+    if (!coordStr) {
+        console.log(instrument + " not found!");
+        return;
+    }
     var mCoords = coordStr.split(',');
     var centerX, centerY, radius;
     centerX = mCoords[0];
