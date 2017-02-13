@@ -5,3 +5,7 @@
 ```
 node bin/www
 ```
+3. open browser:
+```
+http://localhost:3000/index.html
+```
