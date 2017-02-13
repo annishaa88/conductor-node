@@ -1,11 +1,15 @@
 # conductor-node
 
-1. install [nodejs](https://nodejs.org/en/download/)
-2. run the server: 
+
+## Installation
+install [nodejs](https://nodejs.org/en/download/)
+
+## Usage
+1.run the node server: 
 ```
 node bin/www
 ```
-3. open browser:
+2.open browser:
 ```
 http://localhost:3000/index.html
 ```
